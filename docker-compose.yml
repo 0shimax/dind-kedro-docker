@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  kedro-kubeflow-example-host:
+    image: kedro-kubeflow-example-host
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - seccomp:unconfined
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        PROJECT_ID: $PROJECT_ID
+    volumes:
+      - ~/projects:/home/rootless/project
+      - ~/data:/home/rootless/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    network_mode: "host"
+    tty: true
