@@ -17,9 +17,7 @@ google-cloud-aiplatform~=1.9.0
 4. Create a python file like the following under a certain dir (e.g. {project_name}/vertex_pipeline/run_kedro_kubeflow.py).
 ```
 import subprocess
-import logging
 
-log = logging.getLogger(__name__)
 
 compiled_file_path = "/home/kedro/kedro-vertex-pipeline.json"
 res = subprocess.run(["kedro", "kubeflow", "-e", "base", "compile", "-o", compiled_file_path], capture_output=True)
