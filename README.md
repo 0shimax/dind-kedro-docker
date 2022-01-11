@@ -1,4 +1,4 @@
-1. `kedro docker init`
+1. `kedro new` and `cd {project_name}` and `kedro docker init`
 2. Add `!data/01_raw/.gitkeep` into `{project_name}/.dockerignore`.
 3. Add lines into `{project_name}/src/requirements.txt` as follows.
 ```
